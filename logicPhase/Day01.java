@@ -47,6 +47,4 @@ public class Day01 {
       return Math.abs(21-n);
     }
   }
-  
-    
 }
