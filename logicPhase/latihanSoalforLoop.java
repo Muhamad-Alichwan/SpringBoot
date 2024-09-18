@@ -84,6 +84,8 @@ public class latihanSoalforLoop {
     maxmin(60, 20, 30, 40);
     System.out.println("");
     beetweenNumber(30, 45);
+    beetweenNumber(30, 50);
+    beetweenNumber(30, 60);
     
   }
   
