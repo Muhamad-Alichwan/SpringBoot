@@ -107,10 +107,23 @@ public static String dayName(int number) {
   }
 
   public static void oddEvenAddition(int number){
-    for (int i = 0; i <= number; i++) {
-      
+    // i%2 == 0 = genap
+    // i%2 != 0 = ganjil
+    // for (int i = 0; i <= number; i++) {
+    //   int j = i + 1;
+    //   if(j<=number){
+    //     System.out.println(i + "+" + j + "=" + (i+j));
+    //   }
+    // }
+
+    int angka1=1;
+    int angka2=2;
+    for (int i = 0; i < number; i++) {
+      int angka3 = angka1 + angka2;
+      System.out.println(angka1 + "+" + angka2 + "=" + angka3);
+      angka1 += 2 ;
+      angka2 += 2 ;
     }
-  
   }
   public static void main(String[] args) {
     // Scanner input = new Scanner(System.in);
@@ -131,10 +144,16 @@ public static String dayName(int number) {
     // hitunghari(day);
     // input.close();
 
+    // Scanner input = new Scanner(System.in);
+    // System.out.println("Masukkan Tahun: ");
+    // int year = input.nextInt();
+    // leapYear(year);
+    // input.close();
+
     Scanner input = new Scanner(System.in);
-    System.out.println("Masukkan Tahun: ");
-    int year = input.nextInt();
-    leapYear(year);
+    System.out.println("Masukkan angka: ");
+    int angka = input.nextInt();
+    oddEvenAddition(angka);
     input.close();
   }
 }
