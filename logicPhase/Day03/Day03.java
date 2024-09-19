@@ -79,15 +79,12 @@ public static String dayName(int number) {
 
   public static void hitunghari(String day) {
     int number = dayNumber(day);
-    if (number == 0) {
-      System.out.println("Tidak ada");
-    } else {
-      System.out.println("Kemarin lusa adalah hari " + dayName((number - 2 + 7)%7));
-      System.out.println("Kemarin adalah hari " + dayName((number - 1 + 7)%7));
-      System.out.println("Hari ini adalah hari " + dayName(number));
-      System.out.println("Besok adalah hari " + dayName((number + 1)%7));
-      System.out.println("Besok lusa adalah hari " + dayName((number + 2)%7));
-    }
+    System.out.println("Kemarin lusa adalah hari " + dayName((number - 2 + 7)%7));
+    System.out.println("Kemarin adalah hari " + dayName((number - 1 + 7)%7));
+    System.out.println("Hari ini adalah hari " + dayName(number));
+    System.out.println("Besok adalah hari " + dayName((number + 1)%7));
+    System.out.println("Besok lusa adalah hari " + dayName((number + 2)%7));
+    
   }
 
   public static void main(String[] args) {
