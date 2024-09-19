@@ -84,7 +84,6 @@ public static String dayName(int number) {
     System.out.println("Hari ini adalah hari " + dayName(number));
     System.out.println("Besok adalah hari " + dayName((number + 1)%7));
     System.out.println("Besok lusa adalah hari " + dayName((number + 2)%7));
-    
   }
 
   public static void main(String[] args) {
