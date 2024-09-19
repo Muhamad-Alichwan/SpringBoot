@@ -115,6 +115,11 @@ End Function
 
    */
   public static void matrix(int size) {
+    /*  
+     * Note:
+     * 1. untuk arah for i ke bawah
+     * 2. untuk arah for j ke kanan
+     */
     for(int i=0;i<size;i++){
       for(int j=0;j<size;j++){
         System.out.print(j + 1 + " ");
