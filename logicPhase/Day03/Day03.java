@@ -107,23 +107,15 @@ public static String dayName(int number) {
   }
 
   public static void oddEvenAddition(int number){
-    // i%2 == 0 = genap
-    // i%2 != 0 = ganjil
-    // for (int i = 0; i <= number; i++) {
-    //   int j = i + 1;
-    //   if(j<=number){
-    //     System.out.println(i + "+" + j + "=" + (i+j));
-    //   }
-    // }
-
-    int angka1=1;
-    int angka2=2;
+    int angka1 = 1;
+    int angka2 = 2;
     for (int i = 0; i < number; i++) {
       int angka3 = angka1 + angka2;
       System.out.println(angka1 + "+" + angka2 + "=" + angka3);
-      angka1 += 2 ;
-      angka2 += 2 ;
+      angka1 +=2;
+      angka2 +=2;
     }
+
   }
   public static void main(String[] args) {
     // Scanner input = new Scanner(System.in);
