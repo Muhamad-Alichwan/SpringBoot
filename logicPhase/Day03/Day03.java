@@ -117,6 +117,25 @@ public static String dayName(int number) {
     }
 
   }
+  // public static String setAlarm(int day, boolean vacation) {
+  //   if(day == 1 || day ==2 || day == 3 || day ==4 || day == 5 || day ==6 && vacation==false){
+  //     return "7:00";
+  //     }
+  //     else{
+  //       return "10:00";
+  //       }
+  //     }
+
+  //   public static boolean solution(String str) {
+  //         if(str.contains("xy") && !str.contains("yx") ){
+  //           return true;
+  //         }
+  //         else{
+  //           return false;
+  //         }
+  //       }
+      
+  
   public static void main(String[] args) {
     // Scanner input = new Scanner(System.in);
     // System.out.println("Masukkan angka: ");
@@ -142,10 +161,12 @@ public static String dayName(int number) {
     // leapYear(year);
     // input.close();
 
-    Scanner input = new Scanner(System.in);
-    System.out.println("Masukkan angka: ");
-    int angka = input.nextInt();
-    oddEvenAddition(angka);
-    input.close();
+    // Scanner input = new Scanner(System.in);
+    // System.out.println("Masukkan angka: ");
+    // int angka = input.nextInt();
+    // oddEvenAddition(angka);
+    // input.close();
+  
+    System.out.println(setAlarm(3, false));
   }
 }
