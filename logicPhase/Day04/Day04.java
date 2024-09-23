@@ -32,17 +32,17 @@ public class Day04 {
     // sikukiri(size);
     // input.close();
 
-    Scanner input = new Scanner(System.in);
-    System.out.println("Masukan Size matrix:");
-    int size = input.nextInt();
-    sikukiribintang(size);
-    input.close();
-
     // Scanner input = new Scanner(System.in);
     // System.out.println("Masukan Size matrix:");
     // int size = input.nextInt();
-    // sikukanan(size);
+    // sikukiribintang(size);
     // input.close();
+
+    Scanner input = new Scanner(System.in);
+    System.out.println("Masukan Size matrix:");
+    int size = input.nextInt();
+    sikukanan(size);
+    input.close();
 
     // Scanner input = new Scanner(System.in);
     // System.out.println("Masukan Size matrix:");
