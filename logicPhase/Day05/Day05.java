@@ -1,9 +1,5 @@
 package logicPhase.Day05;
-import java.util.Scanner;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Day05 {
 
@@ -80,17 +76,47 @@ public class Day05 {
   //   input.close();
   // }
 
-  Scanner input = new Scanner(System.in);
-    while (true) {
-      System.out.println(" Masukan Size column (ketik 0 untuk keluar):");
-      int size = input.nextInt();
-      if (size == 0) {
-        break;
-      }
-      max(size);
-    }
-    input.close();
-  }
+  // Scanner input = new Scanner(System.in);
+  //   while (true) {
+  //     System.out.println(" Masukan Size column (ketik 0 untuk keluar):");
+  //     int size = input.nextInt();
+  //     if (size == 0) {
+  //       break;
+  //     }
+  //     max(size);
+  //   }
+  //   input.close();
+  // }
+
+//   // Membuat daftar yang akan diberikan sebagai argumen ke fungsi hitung
+//   List<Integer> inputList = new ArrayList<>();
+//   inputList.add(1);
+//   inputList.add(2);
+//   inputList.add(3);
+
+//   // Memanggil fungsi hitung dan menyimpan hasilnya
+//   List<Integer> resultList = hitung(inputList);
+
+//   // Mencetak hasil
+//   System.out.println("Hasil dari fungsi hitung: " + resultList);
+// }
+
+  List<Integer> inputList1 = new ArrayList<>();
+  List<Integer> inputList2 = new ArrayList<>();
+  inputList1.add(1);
+  inputList1.add(2);
+  inputList1.add(3);
+
+  inputList2.add(1);
+  inputList2.add(2);
+  inputList2.add(3);
+
+  // Memanggil fungsi hitung dan menyimpan hasilnya
+  List<Integer> resultList = sum2(inputList1, inputList2);
+
+  // Mencetak hasil
+  System.out.println("Hasil dari fungsi hitung: " + resultList);
+}
 
   public static void kotak(int size) {
     char[][] arrA = new char[size][size];
@@ -296,6 +322,29 @@ public class Day05 {
     
     System.out.println("\nNilai Maximum dari Array : " + arrA[arrA.length-1]);
   }
+
+  public static List<Integer> hitung(List<Integer> a) {
+    ArrayList<Integer> reverse = new ArrayList<>();
+    // reverse.add(a.get(2));
+    // reverse.add(a.get(1));
+    // reverse.add(a.get(0));
+    for (int i = a.size()-1; i >= 0; i--) {
+      reverse.add(a.get(i));
+    }
+    return reverse;
+}
+
+public static List<Integer> sum2(List<Integer> a, List<Integer> b) {
+  ArrayList<Integer> sum2List = new ArrayList<Integer>();
+  sum2List.add(a.get(0)+b.get(0));
+  sum2List.add(a.get(
+  1)+b.get(1));
+  sum2List.add(a.get(2)+b.get(2));
+  for (int i = 0; i < sum2List.size(); i++) {
+    sum2List.get(i);
+  }
+  return sum2List;
+}
 
 
 }
