@@ -101,21 +101,43 @@ public class Day05 {
 //   System.out.println("Hasil dari fungsi hitung: " + resultList);
 // }
 
+//   List<Integer> inputList1 = new ArrayList<>();
+//   List<Integer> inputList2 = new ArrayList<>();
+//   inputList1.add(1);
+//   inputList1.add(2);
+//   inputList1.add(3);
+
+//   inputList2.add(1);
+//   inputList2.add(2);
+//   inputList2.add(3);
+
+//   // Memanggil fungsi hitung dan menyimpan hasilnya
+//   List<Integer> resultList = sum2(inputList1, inputList2);
+
+//   // Mencetak hasil
+//   System.out.println("Hasil dari fungsi hitung: " + resultList);
+// }
+
   List<Integer> inputList1 = new ArrayList<>();
   List<Integer> inputList2 = new ArrayList<>();
-  inputList1.add(1);
+  // twoTwo([4, 2, 2, 3]) → true
+  // twoTwo([2, 2, 4]) → true
+  // twoTwo([2, 2, 4, 2]) → false
+  inputList1.add(4);
+  inputList1.add(2);
   inputList1.add(2);
   inputList1.add(3);
 
-  inputList2.add(1);
   inputList2.add(2);
-  inputList2.add(3);
+  inputList2.add(2);
+  inputList2.add(4);
+  inputList2.add(2);
 
   // Memanggil fungsi hitung dan menyimpan hasilnya
-  List<Integer> resultList = sum2(inputList1, inputList2);
+  boolean resultList = twotwo(inputList2);
 
   // Mencetak hasil
-  System.out.println("Hasil dari fungsi hitung: " + resultList);
+  System.out.println(resultList);
 }
 
   public static void kotak(int size) {
@@ -344,6 +366,25 @@ public static List<Integer> sum2(List<Integer> a, List<Integer> b) {
     sum2List.get(i);
   }
   return sum2List;
+}
+
+public static boolean twotwo(List<Integer> a) {
+  // memeriksa array jika 
+  if (a.size()==1 && a.get(0)==2) {
+    return false;
+  }
+  // memeriksa angka depan dan terakhir array
+  if(a.size() >=2){
+    if(a.get(0)==2 && a.get(1)!=2 || a.size()-1==2 && a.size()-2!=2){
+    return false;
+  }
+  for (int i = 1; i <= a.size()-2; i++) {
+    if(a.get(i)==2 && a.get(i-1)!=2 && a.get(i+1)!=2){
+      return false;
+    }
+  }
+}
+  return true;
 }
 
 

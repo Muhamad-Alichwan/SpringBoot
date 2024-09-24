@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Day06",
+      "request": "launch",
+      "mainClass": "logicPhase.Day06.Day06",
+      "projectName": "batch-342_18ac8179"
+    },
+    {
+      "type": "java",
       "name": "Day05",
       "request": "launch",
       "mainClass": "logicPhase.Day05.Day05",
