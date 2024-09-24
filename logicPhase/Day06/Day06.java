@@ -8,9 +8,9 @@ public class Day06 {
     vokalkonsonan("Next Case");
     System.out.println();
 
-    // Scanner input = new Scanner(System.in);
-    // makan(input);
-    // input.close();
+    Scanner input = new Scanner(System.in);
+    makan(input);
+    input.close();
 
     // Scanner input = new Scanner(System.in);
     // konversiVolume(input);
@@ -51,7 +51,7 @@ public class Day06 {
 
   public static void makan(Scanner input) {
     int totalOrang = 0;
-    int totalPorsi = 0;
+    double totalPorsi = 0;
     int totalPorsiPerempuanDewasa = 0;
 
     while (true) {
@@ -92,7 +92,7 @@ public class Day06 {
           System.out.print("Masukkan jumlah Anak - anak yang akan makan: ");
           int anakAnak = input.nextInt();
           totalOrang += anakAnak;
-          totalPorsi += anakAnak;
+          totalPorsi += anakAnak * 0.5;
           System.out.println(anakAnak + " orang Anak - anak ");
           break;
         case 5:
