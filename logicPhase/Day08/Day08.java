@@ -27,7 +27,7 @@ public class Day08 {
             System.out.print("Masukan angka ke-2: ");
             double angka2 = scanner.nextDouble();
             tambah tambah = new tambah(angka1,angka2);
-            System.out.printf("Hasil %.2f + %.2f = %.2f\n", angka1, angka2, tambah.perhitunganTambah());
+            System.out.printf("Hasil %.2f + %.2f = %.2f\n", tambah.angka1, tambah.angka2, tambah.perhitunganTambah());
             break;
 
           case 2:
@@ -36,7 +36,7 @@ public class Day08 {
             System.out.print("Masukan angka ke-2: ");
             double angka2Kurang = scanner.nextDouble();
             kurang kurang = new kurang(angka1Kurang,angka2Kurang);
-            System.out.printf("Hasil %.2f - %.2f = %.2f\n", angka1Kurang, angka2Kurang, kurang.perhitunganKurang());
+            System.out.printf("Hasil %.2f - %.2f = %.2f\n", kurang.angka1, kurang.angka2, kurang.perhitunganKurang());
             break;
 
           case 3:
