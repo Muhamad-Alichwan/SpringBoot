@@ -47,7 +47,7 @@ public class Day08 {
             // kali kali = new kali(setAngka1,setAngka2);
             kali.setAngka1(setAngka1);
             kali.setAngka2(setAngka2);
-            System.out.printf("Hasil %.2f * %.2f = %.2f\n", setAngka1, setAngka2, kali.perhitunganKali());
+            System.out.printf("Hasil %.2f * %.2f = %.2f\n", kali.getAngka1(), kali.getAngka2(), kali.perhitunganKali());
             break;
 
           case 4:
@@ -58,7 +58,7 @@ public class Day08 {
             // bagi bagi = new bagi(setAngka1Bagi,setAngka2Bagi);
             bagi.setAngka1(setAngka1Bagi);
             bagi.setAngka2(setAngka2Bagi);
-            System.out.printf("Hasil %.2f / %.2f = %.2f\n", setAngka1Bagi, setAngka2Bagi, bagi.perhituganBagi());
+            System.out.printf("Hasil %.2f / %.2f = %.2f\n", bagi.getAngka1(), bagi.getAngka2(), bagi.perhituganBagi());
             break;
           
           case 0:
