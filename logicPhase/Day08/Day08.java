@@ -10,12 +10,12 @@ public class Day08 {
     Scanner scanner = new Scanner(System.in);
     int input = -1;
     while (input != 0) {
-      System.out.println("Masukan angka (0 untuk keluar program kalkulator)");
       System.out.println("Operasi Matematika");
       System.out.println("1. Tambah");
       System.out.println("2. Kurang");
       System.out.println("3. Kali");
       System.out.println("4. Bagi");
+      System.out.println("0. Keluar");
       System.out.print("Masukan Angka: ");
 
       if(input != 0 ){
