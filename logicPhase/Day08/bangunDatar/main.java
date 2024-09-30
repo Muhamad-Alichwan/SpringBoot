@@ -51,7 +51,7 @@ public class main {
     System.out.println();
 
     lingkaran lingkaran1 = new lingkaran();
-    lingkaran1.jariJari = 7;
+    lingkaran1.setJariJari(7);
     lingkaran1.keliling();
     lingkaran1.luas();
 
