@@ -1,9 +1,10 @@
-package logicPhase.Day08.bangunDatar;
+package logicPhase.Day08.bangundatar;
 
 // import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
+    String str;
     // Scanner scanner = new Scanner(System.in);
 
     // scanner.close();

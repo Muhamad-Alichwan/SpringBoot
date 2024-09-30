@@ -1,4 +1,4 @@
-package logicPhase.Day08.bangunDatar;
+package logicPhase.Day08.bangundatar;
 
 public abstract class BangunDatar implements KelilingLuas{
   private double horizontal;
