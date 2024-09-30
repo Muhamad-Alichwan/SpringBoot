@@ -2,58 +2,62 @@ package logicPhase.Day08.bangunDatar;
 
 // import java.util.Scanner;
 
-public class main {
+public class Main {
   public static void main(String[] args) {
     // Scanner scanner = new Scanner(System.in);
 
     // scanner.close();
-    persegi persegi1 = new persegi();
-    persegi1.horizontal = 5;
-    persegi1.vertikal = 5;
-    persegi1.keliling();
-    persegi1.luas();
+    Persegi Persegi1 = new Persegi();
+    Persegi1.setHorizontal(5);
+    System.out.println("Keliling Persegi : "+ Persegi1.keliling());
+    System.out.println("Luas Persegi : "+ Persegi1.luas());
 
     System.out.println();
 
-    persegiPanjang persegiPanjang1 = new persegiPanjang();
-    persegiPanjang1.horizontal = 6;
-    persegiPanjang1.vertikal = 9;
-    persegiPanjang1.keliling();
-    persegiPanjang1.luas();
+    PersegiPanjang PersegiPanjang1 = new PersegiPanjang();
+    PersegiPanjang1.setHorizontal(6);
+    PersegiPanjang1.setHorizontal(9);
+    System.out.println("Keliling Persegi Panjang : "+ PersegiPanjang1.keliling());
+    System.out.println("Luas Persegi Panjang : "+ PersegiPanjang1.luas());
+    ;
 
     System.out.println();
 
-    segitigaSiku segitigaSiku1 = new segitigaSiku();
-    segitigaSiku1.horizontal = 3;
-    segitigaSiku1.vertikal = 4;
-    segitigaSiku1.diagonal = 5;
-    segitigaSiku1.keliling();
-    segitigaSiku1.luas();
+    SegitigaSiku SegitigaSiku1 = new SegitigaSiku();
+    SegitigaSiku1.setHorizontal(3);
+    SegitigaSiku1.setVertikal(4);
+    SegitigaSiku1.setDiagonal(5);
+    System.out.println("Keliling Segitiga Siku-Siku : "+ SegitigaSiku1.keliling());
+    System.out.println("Luas Segitiga Siku-Siku : "+ SegitigaSiku1.luas());
+    
 
     System.out.println();
 
-    segitigaSisi segitigaSisi1 = new segitigaSisi();
-    segitigaSisi1.horizontal = 3;
-    segitigaSisi1.vertikal = 4;
-    segitigaSisi1.diagonal = 5;
-    segitigaSisi1.keliling();
-    segitigaSisi1.luas();
+    SegitigaSisi SegitigaSisi1 = new SegitigaSisi();
+    SegitigaSisi1.setHorizontal(3); 
+    SegitigaSisi1.setVertikal(4); 
+    SegitigaSisi1.setDiagonal(5); 
+    System.out.println("Keliling Segitiga Sama Sisi : "+ SegitigaSisi1.keliling());
+    System.out.println("Luas Segitiga Sama Sisi : "+ SegitigaSisi1.luas());
+    
 
     System.out.println();
 
-    jajargenjang jajargenjang1 = new jajargenjang();
-    jajargenjang1.horizontal = 3;
-    jajargenjang1.vertikal = 4;
-    jajargenjang1.diagonal = 5;
-    jajargenjang1.keliling();
-    jajargenjang1.luas();
+    Jajargenjang jajargenjang1 = new Jajargenjang();
+    jajargenjang1.setHorizontal(3);
+    jajargenjang1.setVertikal(4);
+    jajargenjang1.setDiagonal(5);
+    System.out.println("Keliling Luas Jajargenjang : "+ jajargenjang1.keliling());
+    System.out.println("Keliling Luas Jajargenjang : "+ jajargenjang1.luas());
+    
 
     System.out.println();
 
-    lingkaran lingkaran1 = new lingkaran();
+    Lingkaran lingkaran1 = new Lingkaran();
     lingkaran1.setJariJari(7);
-    lingkaran1.keliling();
-    lingkaran1.luas();
+    System.out.println("Keliling Lingkaran : "+ lingkaran1.keliling());
+    System.out.println("Luas Lingkaran : "+ lingkaran1.luas());
+    
 
   }
 }

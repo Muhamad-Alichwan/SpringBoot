@@ -1,25 +1,24 @@
 package logicPhase.Day08.bangunDatar;
 
-public class jajargenjang extends bangunDatar{
-  public jajargenjang(){
+public class Jajargenjang extends BangunDatar{
+  public Jajargenjang(){
   }
-  public jajargenjang(double horizontal, double vertikal, double diagonal){
-    this.horizontal = horizontal;
-    this.vertikal = vertikal;
-    this.diagonal = diagonal;
+  public Jajargenjang(double horizontal, double vertikal, double diagonal){
+    setHorizontal(horizontal);
+    setVertikal(vertikal);
+    setDiagonal(diagonal);
+    
   }
   @Override
-  public void keliling() {
-    double hasilKeliling =(horizontal + diagonal)*2;
-    System.out.println("ini Keliling Segitiga Sama Sisi: ");
-    System.out.println(hasilKeliling);
+  public double keliling() {
+    double hasilKeliling =(getHorizontal() + getDiagonal())*2;
+    return hasilKeliling;
   }
 
   @Override
-  public void luas() {
-    double hasilLuas =horizontal * vertikal;
-    System.out.println("ini Luas Segitiga Sama Sisi: ");
-    System.out.println(hasilLuas);
+  public double luas() {
+    double hasilLuas =getHorizontal() * getVertikal();
+    return hasilLuas;
   }
   
 }

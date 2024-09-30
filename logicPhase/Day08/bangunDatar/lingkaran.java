@@ -1,22 +1,20 @@
 package logicPhase.Day08.bangunDatar;
 
-public class lingkaran extends bangunDatar{
-  public lingkaran(){
+public class Lingkaran extends BangunDatar{
+  public Lingkaran(){
   }
-  public lingkaran(double jariJari){
+  public Lingkaran(double jariJari){
     setJariJari(jariJari);
   }
   @Override
-  public void keliling() {
+  public double keliling() {
     double hasilKeliling = 2 * 3.14 * getJariJari();
-    System.out.println("ini Keliling Lingkaran: ");
-    System.out.println(hasilKeliling);
+    return hasilKeliling;
   }
   @Override
-  public void luas() {
+  public double luas() {
     double hasilLuas = 3.14 * (getJariJari()*getJariJari());
-    System.out.println("ini Luas Lingkaran: ");
-    System.out.println(hasilLuas);
+    return hasilLuas;
   }
   
 }
