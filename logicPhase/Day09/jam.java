@@ -3,7 +3,7 @@ package logicPhase.Day09;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class jam {
+public class Jam {
   public static void main(String[] args) {
     ubahJam("12:35 AM"); // 00:35
     ubahJam("19:30"); // 07:30 PM

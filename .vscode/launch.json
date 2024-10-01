@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "LiburBersama",
+      "request": "launch",
+      "mainClass": "logicPhase.Day09.LiburBersama",
+      "projectName": "batch-342_18ac8179"
+    },
+    {
+      "type": "java",
       "name": "Main",
       "request": "launch",
       "mainClass": "logicPhase.Day08.bangundatar.Main",

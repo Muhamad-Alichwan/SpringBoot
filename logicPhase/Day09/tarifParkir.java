@@ -6,7 +6,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 import java.util.Locale;
 
-public class tarifParkir {
+public class TarifParkir {
   public static void main(String[] args) {
     kalkulasiTarif("28 Januari 2020 07:30:34", "28 Januari 2020 20:03:35");
   //   Scanner input = new Scanner(System.in);
@@ -41,8 +41,12 @@ public class tarifParkir {
 
   public static void kalkulasiTarif(String strtanggalMulai, String strtanggalAkhir) {
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd MMMM yyyy HH:mm:ss", Locale.forLanguageTag("id-ID"));
+
+    // Convert String to LocalDateTime based on formata from dateTimeFormatter
     LocalDateTime tanggalMulai = LocalDateTime.parse(strtanggalMulai, dateTimeFormatter);
     LocalDateTime tanggalAkhir = LocalDateTime.parse(strtanggalAkhir, dateTimeFormatter);
+
+    // variabel jam menyimpan dengan tipe data Long. Yang menyimpan nilai selisih jam antara tanggal mulai dan akhir.
     Long jam = ChronoUnit.HOURS.between(tanggalMulai, tanggalAkhir);
     double uang = 0;
     if(jam <= 8){
