@@ -16,7 +16,7 @@ public class Main {
 
     PersegiPanjang PersegiPanjang1 = new PersegiPanjang();
     PersegiPanjang1.setHorizontal(6);
-    PersegiPanjang1.setHorizontal(9);
+    PersegiPanjang1.setVertikal(9);
     System.out.println("Keliling Persegi Panjang : "+ PersegiPanjang1.keliling());
     System.out.println("Luas Persegi Panjang : "+ PersegiPanjang1.luas());
     ;
