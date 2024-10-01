@@ -4,7 +4,6 @@ package logicPhase.Day08.bangundatar;
 
 public class Main {
   public static void main(String[] args) {
-    String str;
     // Scanner scanner = new Scanner(System.in);
 
     // scanner.close();
