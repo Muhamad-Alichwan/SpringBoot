@@ -144,5 +144,22 @@ where m.kode_mahasiswa = 'M001';
 --where j.status_jurusan = 'Aktif'
 --order by m.kode_mahasiswa asc ;
 
--- Soal Nommor 8
+-- Soal Nomor 8
+create view dataBudi as
+select m.kode_mahasiswa, m.nama_mahasiswa, j.nama_jurusan,
+d.nama_dosen, j.status_jurusan, td.deskripsi 
+from mahasiswa as m 
+join jurusan as j on m.kode_jurusan = j.kode_jurusan 
+join agama as a on m.kode_agama = a.kode_agama
+join dosen as d on m.kode_jurusan = d.kode_jurusan 
+join type_dosen as td on d.kode_type_dosen = kode_typedosen 
+where m.kode_mahasiswa = 'M001'; 
 
+-- use view
+select * from dataBudi;
+
+-- Soal Nomor 9
+select m.kode_mahasiswa, m.nama_mahasiswa, n.nilai 
+from mahasiswa as m
+left join nilai as n on m.kode_mahasiswa = n.kode_mahasiswa
+order by m.id asc;
