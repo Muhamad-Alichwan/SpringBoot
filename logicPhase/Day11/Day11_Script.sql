@@ -119,7 +119,7 @@ select m.nama_mahasiswa, n.nilai, u.status_ujian
 from mahasiswa as m 
 join nilai as n on m.kode_mahasiswa = n.kode_mahasiswa 
 join ujian as u on u.kode_ujian = n.kode_ujian 
-where n.nilai >=80 and u.status_ujian = 'Aktif'; 
+where n.nilai > 80 and u.status_ujian = 'Aktif'; 
 
 -- Soal Nomor 5
 select * from jurusan as j where j.nama_jurusan ilike '%sistem%';
