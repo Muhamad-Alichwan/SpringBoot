@@ -162,4 +162,5 @@ select * from dataBudi;
 select m.kode_mahasiswa, m.nama_mahasiswa, n.nilai 
 from mahasiswa as m
 left join nilai as n on m.kode_mahasiswa = n.kode_mahasiswa
+-- full join nilai as n on m.kode_mahasiswa = n.kode_mahasiswa
 order by m.id asc;
