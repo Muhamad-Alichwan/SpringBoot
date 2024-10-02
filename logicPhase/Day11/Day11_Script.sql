@@ -93,9 +93,9 @@ Nilai integer
 
 insert into Nilai(Kode_Mahasiswa, Kode_Ujian, Nilai)
 values ('M004','U001', 90),
-('M001','U002', 80),
+('M001','U001', 80),
 ('M002','U003', 85),
-('M004','U004', 95),
+('M004','U002', 95),
 ('M005','U005', 70);
 
 -- Soal Nomor 1
