@@ -125,7 +125,7 @@ where n.nilai > 80 and u.status_ujian = 'Aktif';
 select * from jurusan as j where j.nama_jurusan ilike '%sistem%';
 
 -- Soal Nomor 6
-select ELECT m.nama_mahasiswa
+select m.nama_mahasiswa
 from mahasiswa as m
 join nilai as  n on m.kode_mahasiswa = n.kode_mahasiswa
 join ujian as  u on n.kode_ujian = u.kode_ujian
