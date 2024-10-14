@@ -155,17 +155,17 @@ End Function
         
     //     input.close();
 
-    Scanner input = new Scanner(System.in);
-    System.out.println("Masukkan angka : ");
-    int angka = input.nextInt();
-    System.out.println(faktorial(angka));
-    input.close();
-
     // Scanner input = new Scanner(System.in);
     // System.out.println("Masukkan angka : ");
     // int angka = input.nextInt();
-    // matrix(angka);
+    // System.out.println(faktorial(angka));
     // input.close();
+
+    Scanner input = new Scanner(System.in);
+    System.out.println("Masukkan angka : ");
+    int angka = input.nextInt();
+    matrix(angka);
+    input.close();
 
   }
   
