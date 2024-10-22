@@ -3,7 +3,7 @@ Category Name: <span th:text="${product.category.name}"></span><br>
 Product Name: <span th:text="${product.name}"></span><br>
 Slug: <span th:text="${product.slug}"></span><br>
 Description: <span th:text="${product.description}"></span><br>
-<input type="checkbox" th:checked="${product.isDeleted}" disabled/><br>
+Deleted: <input type="checkbox" th:checked="${product.isDeleted}" disabled/><br>
 <hr>
 <button class="btn btn-danger" th:value="${product.id}" onclick="if (confirm('Are you sure!?')) deleteProduct(this.value)" style="float: right;" >Delete</button>
 <button type="button" class="btn btn-secondary" style="float: right; margin-right: 10px;" onclick="window.location.href='/product';">Cancel</button>

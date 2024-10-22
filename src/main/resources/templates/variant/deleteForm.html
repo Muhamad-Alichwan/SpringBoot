@@ -6,7 +6,7 @@ Slug: <span th:text="${variant.slug}"></span><br>
 Description: <span th:text="${variant.description}"></span><br>
 Variant Price: <span th:text="${variant.price}"></span><br>
 Variant Stock: <span th:text="${variant.stock}"></span><br>
-<input type="checkbox" th:checked="${variant.isDeleted}" disabled/><br>
+Deleted: <input type="checkbox" th:checked="${variant.isDeleted}" disabled/><br>
 <hr>
 <button class="btn btn-danger" th:value="${variant.id}" onclick="if (confirm('Are you sure!?')) deleteVariant(this.value)" style="float: right;" >Delete</button>
 <button type="button" class="btn btn-secondary" style="float: right; margin-right: 10px;" onclick="window.location.href='/variant';">Cancel</button>
