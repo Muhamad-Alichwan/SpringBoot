@@ -13,11 +13,17 @@ import com.xa.alichwan.entities.Variant;
 import com.xa.alichwan.repositories.CategoryRepository;
 import com.xa.alichwan.repositories.ProductRepository;
 import com.xa.alichwan.repositories.VariantRepository;
+import com.xa.alichwan.services.CategoryService;
+import com.xa.alichwan.services.ProductService;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 
 
 
@@ -33,6 +39,9 @@ public class VariantController {
   @Autowired
   private VariantRepository variantRepository;
 
+  @Autowired
+  private ProductService productService;
+
   @GetMapping("")
   public ModelAndView getVariant() {
     ModelAndView view = new ModelAndView("variant/index");
@@ -42,6 +51,12 @@ public class VariantController {
     return view;
   }
 
+  @GetMapping("/products-by-category/{categoryId}")
+  @ResponseBody
+  public List<Product> getProductsByCategory(@PathVariable Long categoryId) {
+    return productService.getProductsByCategoryId(categoryId);
+  }
+  
   
   @GetMapping("/form")
   public ModelAndView form() {

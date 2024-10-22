@@ -46,3 +46,9 @@ function deleteCategory(id){
       }
   });
 }
+
+function updateIsDeleted(checkbox) {
+    let isDeleted = checkbox.checked ? false : true;
+    // kode untuk mengupdate nilai isDeleted di sini
+    
+}

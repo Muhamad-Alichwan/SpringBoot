@@ -35,7 +35,9 @@ public class ProductServiceImpl implements ProductService {
     Product product = productRepository.findById(id).orElse(null);
     productRepository.deleteById(product.getId());
   }
-  
-  
-  
+
+  @Override
+  public List<Product> getProductsByCategoryId(Long categoryId) {
+    return productRepository.getProductsByCategoryId(categoryId);
+  }
 }

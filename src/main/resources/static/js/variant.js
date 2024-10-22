@@ -47,9 +47,34 @@ function deleteVariant(id) {
   });
 }
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   let categoryIdOptions = document.querySelectorAll()
+// });
+
 $(document).ready(function() {
   $('#categoryId option[value=""]').attr('disabled', true);
   $('#productId option[value=""]').attr('disabled', true);
 });
 
+// function updateProduct(categoryId){
+//   $.ajax({
+//       type: "get",
+//       url: `/variant/products-by-category/${categoryId}`,
+//       success: function(products) {
+//           const productSelect = document.getElementById("productId");
+//           productSelect.innerHTML = '<option selected disabled value="">Select Product</option>';
+
+//           products.forEach(product => {
+//               const newOption = document.createElement("option");
+//               newOption.value = product.id;
+//               newOption.text = product.name;
+//               productSelect.appendChild(newOption);
+//           });
+//       },
+//       error: function(error) {
+//           console.error('Error fetching products:', error);
+//       }
+//   });
+
+// }
 
