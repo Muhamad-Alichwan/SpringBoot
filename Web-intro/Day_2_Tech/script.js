@@ -1,4 +1,13 @@
-function getData(){
+// document.querySelector('form').addEventListener('submit', getData);
+function getData(event){
+  
+  // mencegah form dari perilaku defaultnya yaitu submit dan refresh otomatis
+  // dengan menggunakan event.preventDefault(); kita mencegah hal tersebut
+  // yang berguna untuk melihat data di console.
+  // event.preventDefault();
+  console.log(event);
+  event.preventDefault();
+
   // Membuat variabel untuk mendapatkan element dari form
   let nama = document.getElementById("nama").value;
   let telepon = document.getElementById("telepon").value;

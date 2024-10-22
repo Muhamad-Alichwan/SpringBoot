@@ -386,33 +386,33 @@ public static boolean twotwo(List<Integer> a) {
 }
   return true;
 }
-public static String solution(String Input) {
-  // Your code starts here.
-  Input = Input.toLowerCase();
-  Map<String,Integer> newMap = new HashMap<String,Integer>();
-  for(int i = 0; i<Input.length(); i++){
-    if(newMap.containsKey(Input.indexOf(i))){
-      newMap.put(Input.indexOf(i), newMap.get(Input.indexOf(i)+1));
-    }
-    else{
-      newMap.put(Input.indexOf(i),1);
-    }
-  }
-}
+// public static String solution(String Input) {
+//   // Your code starts here.
+//   Input = Input.toLowerCase();
+//   Map<String,Integer> newMap = new HashMap<String,Integer>();
+//   for(int i = 0; i<Input.length(); i++){
+//     if(newMap.containsKey(Input.indexOf(i))){
+//       newMap.put(Input.indexOf(i), newMap.get(Input.indexOf(i)+1));
+//     }
+//     else{
+//       newMap.put(Input.indexOf(i),1);
+//     }
+//   }
+// }
 
 
-  public static List<Integer> solution(List<Integer> l1, List<Integer> l2) {
-    // Your code starts here.
-    String strl1 = l1.toString();
-    Integer numberl1 = Integer.parseInt(strl1);
-    String strl2 = l2.toString();
-    Integer numberl2 = Integer.parseInt(strl2);
-    List<Integer> newList = new List<Integer>();
-    newList = numberl1 + numberl2;
-    return newList;
+//   public static List<Integer> solution(List<Integer> l1, List<Integer> l2) {
+//     // Your code starts here.
+//     String strl1 = l1.toString();
+//     Integer numberl1 = Integer.parseInt(strl1);
+//     String strl2 = l2.toString();
+//     Integer numberl2 = Integer.parseInt(strl2);
+//     List<Integer> newList = new List<Integer>();
+//     newList = numberl1 + numberl2;
+//     return newList;
 
-  }
-}
+//   }
+// }
 
 
 

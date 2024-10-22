@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "AlichwanApplication",
+      "request": "launch",
+      "mainClass": "com.xa.alichwan.AlichwanApplication",
+      "projectName": "alichwan"
+    },
+    {
+      "type": "java",
       "name": "LiburBersama",
       "request": "launch",
       "mainClass": "logicPhase.Day09.LiburBersama",
