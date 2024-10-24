@@ -1,0 +1,25 @@
+<form th:action="@{~/category/save}" th:object="${category}" method="post">
+    <input type="hidden" name="id" id="id" th:field="*{id}">
+    <div class="mb-3">
+        <label for="categoryName" class="form-label">Category Name</label>
+        <input type="text" class="form-control" name="name" id="categoryName" placeholder="Input Category Name" th:field="*{name}">
+    </div>
+    <div class="mb-3">
+        <label for="categorySlug" class="form-label">Slug</label>
+        <input type="text" class="form-control" name="slug" id="categorySlug" placeholder="Input Category Slug" th:field="*{slug}">
+    </div>
+    <div class="mb-3">
+        <label for="categoryDesc">Description</label>
+        <textarea class="form-control" name="desc" id="categoryDesc" placeholder="Input Category Desc" th:field="*{description}"></textarea>
+    </div>
+    <div class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="deleted" id="categoryDeleted" th:field="*{isDeleted}">
+            <label class="form-check-label" for="categoryDeleted">
+                Deleted
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" style="float: right;">Save</button>
+    <button type="button" class="btn btn-secondary" style="float: right; margin-right: 10px;" onclick="window.location.href='/category';">Cancel</button>
+</form>

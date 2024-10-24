@@ -1,0 +1,8 @@
+<p>Are you sure to delete this data?</p>
+CategoryName: <span th:text="${category.name}"></span><br>
+Slug: <span th:text="${category.slug}"></span><br>
+Description: <span th:text="${category.description}"></span><br>
+Deleted: <input type="checkbox" th:checked="${category.isDeleted}" disabled/><br>
+<hr>
+<button class="btn btn-danger" th:value="${category.id}" onclick="if (confirm('Are you sure!?')) deleteCategory(this.value)" style="float: right;" >Delete</button>
+<button type="button" class="btn btn-secondary" style="float: right; margin-right: 10px;" onclick="window.location.href='/category';">Cancel</button>

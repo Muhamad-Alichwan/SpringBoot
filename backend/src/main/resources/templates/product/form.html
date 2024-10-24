@@ -1,0 +1,32 @@
+<form th:action="@{~/product/save}" th:object="${product}" method="post">
+    <input type="hidden" name="id" id="id" th:field="*{id}">
+    <label for="categoryId" class="form-label">Category</label>
+    <select class="form-control" id="categoryId" name="categoryId" th:field="*{categoryId}">
+        <option value="" selected>Select Category</option>
+        <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+    </select>
+    <div class="mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <input type="text" class="form-control" name="name" id="productName" placeholder="Input Product Name" th:field="*{name}">
+    </div>
+    <div class="mb-3">
+        <label for="productSlug" class="form-label">Slug</label>
+        <input type="text" class="form-control" name="slug" id="productSlug" placeholder="Input Product Slug" th:field="*{slug}">
+    </div>
+    <div class="mb-3">
+        <label for="productDesc">Description</label>
+        <textarea class="form-control" name="desc" id="productDesc" placeholder="Input Product Desc" th:field="*{description}"></textarea>
+    </div>
+    <div class="mb-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="deleted" id="productDeleted" th:field="*{isDeleted}">
+            <label class="form-check-label" for="productDeleted">
+                Deleted
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" style="float: right;">Save</button>
+    <button type="button" class="btn btn-secondary" style="float: right; margin-right: 10px;" onclick="window.location.href='/product'">Cancel</button>
+
+    <script src="js/product.js"></script>
+</form>
