@@ -8,11 +8,19 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+<<<<<<< HEAD
 	<groupId>com.xa.frontend</groupId>
 	<artifactId>frontend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>frontend</name>
 	<description>FrontEnd Spring Boot</description>
+=======
+	<groupId>com.xa</groupId>
+	<artifactId>frontend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>frontend</name>
+	<description>Front End Spring Boot</description>
+>>>>>>> backend/main
 	<url/>
 	<licenses>
 		<license/>
