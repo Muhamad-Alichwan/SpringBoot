@@ -49,7 +49,7 @@ public class ProductRestController {
           productResponseDto.setSlug(product.getSlug());
           productResponseDto.setDescription(product.getDescription());
           productResponseDto.setCategoryId(product.getCategory().getId());
-          productResponseDto.setIsDeteled(product.getIsDeleted());
+          productResponseDto.setIsDeleted(product.getIsDeleted());
           productResponseDtos.add(productResponseDto);
         }
         // List<ProductResponseDto> productResponseDtos = products.stream().map(product -> modelMapper.map(product, ProductResponseDto.class)).collect(Collectors.toList());

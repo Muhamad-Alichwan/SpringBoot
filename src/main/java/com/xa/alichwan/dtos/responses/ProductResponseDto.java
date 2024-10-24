@@ -12,7 +12,7 @@ public class ProductResponseDto {
   private Long categoryId;
   private LocalDateTime createdAt;
   private LocalDateTime updatableAt;
-  private Boolean isDeteled;
+  private Boolean isDeleted;
 
   
 }
