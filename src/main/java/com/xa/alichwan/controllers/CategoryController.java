@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.xa.alichwan.entities.Category;
 import com.xa.alichwan.repositories.CategoryRepository;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -65,7 +67,7 @@ public class CategoryController {
     }
 
     @GetMapping("/delete/{id}")
-    public ModelAndView deleteCategory(@PathVariable("id") Long id) {
+    public ModelAndView deleteCategory(@PathVariable Long id) {
         categoryRepository.deleteById(id);
         return new ModelAndView("redirect:/category");
     }

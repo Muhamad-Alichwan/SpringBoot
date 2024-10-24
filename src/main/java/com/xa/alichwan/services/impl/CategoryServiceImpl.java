@@ -2,9 +2,13 @@ package com.xa.alichwan.services.impl;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.xa.alichwan.dtos.requests.CategoryRequestDto;
+import com.xa.alichwan.dtos.responses.CategoryResponseDto;
 import com.xa.alichwan.entities.Category;
 import com.xa.alichwan.repositories.CategoryRepository;
 import com.xa.alichwan.services.CategoryService;
@@ -15,9 +19,14 @@ public class CategoryServiceImpl implements CategoryService{
   @Autowired
   private CategoryRepository categoryRepository;
 
+  ModelMapper modelMapper = new ModelMapper();
+
   @Override
-  public List<Category> getAllCategories() {
-    return categoryRepository.getAllCategories();
+  public List<CategoryResponseDto> getAllCategories() {
+    modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+    List<Category> categories = categoryRepository.findAll();
+    List<CategoryResponseDto> categoryResponseDtos = categories.stream().map(category -> modelMapper.map(category, CategoryResponseDto.class)).collect(java.util.stream.Collectors.toList());
+    return categoryResponseDtos;
   }
 
   @Override
