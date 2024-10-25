@@ -14,24 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.xa.backend.dtos.requests.CategoryRequestDto;
 import com.xa.backend.dtos.responses.CategoryResponseDto;
-import com.xa.backend.dtos.responses.ProductResponseDto;
 import com.xa.backend.entities.Category;
-import com.xa.backend.entities.Product;
 import com.xa.backend.repositories.CategoryRepository;
 import com.xa.backend.services.CategoryService;
 
 import jakarta.validation.Valid;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
+@CrossOrigin("http://localhost:9001")
 @RequestMapping("/api/category")
 public class CategoryRestController {
     

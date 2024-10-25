@@ -17,7 +17,6 @@ import com.xa.backend.entities.Variant;
 import com.xa.backend.repositories.CategoryRepository;
 import com.xa.backend.repositories.ProductRepository;
 import com.xa.backend.repositories.VariantRepository;
-import com.xa.backend.services.CategoryService;
 import com.xa.backend.services.ProductService;
 
 import org.springframework.web.bind.annotation.PostMapping;

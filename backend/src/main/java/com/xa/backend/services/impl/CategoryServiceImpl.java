@@ -7,7 +7,6 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.xa.backend.dtos.requests.CategoryRequestDto;
 import com.xa.backend.dtos.responses.CategoryResponseDto;
 import com.xa.backend.entities.Category;
 import com.xa.backend.repositories.CategoryRepository;

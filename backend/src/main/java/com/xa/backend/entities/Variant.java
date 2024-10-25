@@ -41,18 +41,33 @@ public class Variant extends BaseEntity {
   @Column(name = "id")
   private Long id;
 
+  @NotBlank
+  @NotNull
+  @NotEmpty
   @Column(name = "name", length = 50)
   private String name;
 
+  @NotBlank
+  @NotNull
+  @NotEmpty
   @Column(name = "slug", length = 50, unique = true)
   private String slug;
   
+  @NotBlank
+  @NotNull
+  @NotEmpty
   @Column(name = "description", columnDefinition = "TEXT")
   private String description;
 
+  @NotBlank
+  @NotNull
+  @NotEmpty
   @Column(name = "price")
   private Double price;
 
+  @NotBlank
+  @NotNull
+  @NotEmpty
   @Column(name = "stock")
   private Double stock;
 
@@ -63,6 +78,7 @@ public class Variant extends BaseEntity {
   @Column(name = "product_id")
   private Long productId;
 
+  @NotNull
   @Column(name = "is_deleted")
   private Boolean isDeleted;
 

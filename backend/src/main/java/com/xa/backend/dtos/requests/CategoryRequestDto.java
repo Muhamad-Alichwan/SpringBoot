@@ -21,7 +21,7 @@ public class CategoryRequestDto {
   @NotNull
   @NotEmpty
   private String description;
- 
+
   @NotNull
   private Boolean isDeleted;
 }

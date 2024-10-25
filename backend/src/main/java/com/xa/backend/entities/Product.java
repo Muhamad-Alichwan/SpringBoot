@@ -38,12 +38,21 @@ public class Product extends BaseEntity{
   @Column(name = "id")
   private Long id;
 
+  @NotBlank
+  @NotNull
+  @NotEmpty
   @Column(name = "name", length = 50)
   private String name;
 
+  @NotBlank
+  @NotNull
+  @NotEmpty
   @Column(name = "slug", length = 50, unique = true)
   private String slug;
 
+  @NotBlank
+  @NotNull
+  @NotEmpty
   @Column(name = "description", columnDefinition = "TEXT")
   private String description;
 
@@ -54,6 +63,7 @@ public class Product extends BaseEntity{
   @Column(name = "category_id")
   private Long categoryId;
 
+  @NotNull
   @Column(name = "is_deleted")
   private Boolean isDeleted;
 

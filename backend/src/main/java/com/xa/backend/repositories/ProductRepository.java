@@ -14,6 +14,7 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
   
   @Query("SELECT p FROM Product p WHERE p.categoryId = :categoryId")
   List<Product> getProductsByCategoryId(@Param("categoryId") Long categoryId);
+
   // Hibernate Query
   // @Query(value = "SELECT p FROM Product p where isDeleted = false")
   // List<Product> getAllProducts();
@@ -21,4 +22,4 @@ public interface ProductRepository extends JpaRepository<Product, Long>{
   @Query(value = "SELECT * FROM spring.products WHERE is_deleted = false and slug = ?1", nativeQuery = true)
   Product getProductBySlug(String slug);
   
-} 
+}

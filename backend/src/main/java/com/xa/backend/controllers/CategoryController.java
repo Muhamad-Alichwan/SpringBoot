@@ -11,8 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.xa.backend.entities.Category;
 import com.xa.backend.repositories.CategoryRepository;
 
-import jakarta.validation.Valid;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
