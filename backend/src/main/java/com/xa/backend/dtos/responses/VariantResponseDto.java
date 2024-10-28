@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class VariantResponseDto {
+  private Long id;
   private Long categoryId;
   private Long productId;
   private String name;
@@ -12,4 +13,5 @@ public class VariantResponseDto {
   private Double price;
   private Double stock;
   private Boolean isDeleted;
+  private ProductResponseDto product;
 }

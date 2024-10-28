@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@CrossOrigin("http://localhost:9001")
+@CrossOrigin("http://localhost:9002")
 @RequestMapping("/api/category")
 public class CategoryRestController {
     
@@ -76,6 +76,7 @@ public class CategoryRestController {
             List<CategoryResponseDto> categoryResponseDtos = new ArrayList<>();
             
             CategoryResponseDto categoryResponseDto = new CategoryResponseDto();
+            categoryResponseDto.setId(category.getId());
             categoryResponseDto.setName(category.getName());
             categoryResponseDto.setSlug(category.getSlug());
             categoryResponseDto.setDescription(category.getDescription());

@@ -7,6 +7,9 @@ import lombok.Data;
 
 @Data
 public class CategoryRequestDto {
+
+  private Long id;
+
   @NotBlank
   @NotNull
   @NotEmpty

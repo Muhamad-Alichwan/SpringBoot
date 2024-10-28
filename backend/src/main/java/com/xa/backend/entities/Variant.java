@@ -59,15 +59,11 @@ public class Variant extends BaseEntity {
   @Column(name = "description", columnDefinition = "TEXT")
   private String description;
 
-  @NotBlank
   @NotNull
-  @NotEmpty
   @Column(name = "price")
   private Double price;
 
-  @NotBlank
   @NotNull
-  @NotEmpty
   @Column(name = "stock")
   private Double stock;
 
