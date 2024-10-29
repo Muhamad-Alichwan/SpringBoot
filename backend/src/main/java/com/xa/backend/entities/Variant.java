@@ -2,6 +2,9 @@ package com.xa.backend.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -69,6 +72,7 @@ public class Variant extends BaseEntity {
 
   @ManyToOne
   @JoinColumn(name = "product_id", insertable = false, updatable = false)
+  @JsonBackReference
   private Product product;
 
   @Column(name = "product_id")
@@ -79,5 +83,6 @@ public class Variant extends BaseEntity {
   private Boolean isDeleted;
 
   @OneToMany(mappedBy = "variantId", cascade = CascadeType.ALL)
+  @JsonManagedReference
   private List<OrderDetail> orderDetails;
 }

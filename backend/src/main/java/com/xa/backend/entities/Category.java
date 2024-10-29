@@ -2,6 +2,8 @@ package com.xa.backend.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -59,6 +61,7 @@ public class Category extends BaseEntity {
     private Boolean isDeleted;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Product> products;
     
 }

@@ -126,8 +126,8 @@ function editCategory(id){
     contentType: "application/json",
     success: function (response) {
       console.log(response);
-      // location.reload();
-      location.href='http://localhost:9001/api/category'
+      location.reload();
+      // location.href='http://localhost:9001/api/category'
     }
   });
 }

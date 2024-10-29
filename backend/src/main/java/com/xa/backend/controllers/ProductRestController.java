@@ -55,7 +55,7 @@ public class ProductRestController {
           productResponseDto.setSlug(product.getSlug());
           productResponseDto.setDescription(product.getDescription());
           productResponseDto.setIsDeleted(product.getIsDeleted());
-          // productResponseDto.setCategory(product.getCategory());
+          productResponseDto.setCategory(product.getCategory());
 
           productResponseDtos.add(productResponseDto);
         }
@@ -84,8 +84,8 @@ public class ProductRestController {
         productResponseDto.setName(product.getName());
         productResponseDto.setSlug(product.getSlug());
         productResponseDto.setDescription(product.getDescription());
-        // productResponseDto.setCategoryId(product.getCategory().getId());
         productResponseDto.setIsDeleted(product.getIsDeleted());
+        productResponseDto.setCategory(product.getCategory());
         categoryResponseDtos.add(productResponseDto);
 
         resultMap.put("status", 200);
@@ -112,6 +112,7 @@ public class ProductRestController {
         product.setSlug(productRequestDto.getSlug());
         product.setDescription(productRequestDto.getDescription());
         product.setIsDeleted(productRequestDto.getIsDeleted());
+        product.setCategoryId(productRequestDto.getCategoryId());
         productService.saveProduct(product);
         resultMap.put("status", 200);
         resultMap.put("message", "success");
@@ -133,7 +134,7 @@ public class ProductRestController {
         product.setName(productRequestDto.getName());
         product.setSlug(productRequestDto.getSlug());
         product.setDescription(productRequestDto.getDescription());
-        // product.setCategoryId(productRequestDto.getCategoryId());
+        product.setCategoryId(productRequestDto.getCategoryId());
         product.setIsDeleted(productRequestDto.getIsDeleted());
         productService.saveProduct(product);
         resultMap.put("status", 200);

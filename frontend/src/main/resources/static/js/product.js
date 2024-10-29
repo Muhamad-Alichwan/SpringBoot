@@ -6,6 +6,7 @@ function loadData() {
     contentType: "application/json",
     success: function (productResponse) {
       let productData = productResponse.data;
+      
       productData.forEach((product, index) => {
         tableData += `<tr>
         <td>${index + 1}</td>
@@ -35,16 +36,13 @@ function openForm(type) {
     success: function (categoryResponse) {
       let categoryData = categoryResponse.data;
       let options = ``;
-
+      options += `<option selected="true" disabled="true" value=0>Select Category</option>`
       categoryData.forEach((category) =>{
         options += `<option value="${category.id}">${category.name}</option>`;
       });
-      $('#categoryName').append(options);
+      $('#categoryId').html(options);
     }
   });
-  $('categoryName').on('changed', function () {
-    $('#categoryId').val(this.value);
-  })
   let button = ``;
   if (type == "edit") {
     button += `<button type="submit" class="btn btn-primary" id="editButton" style="float: right;" onclick="editProduct(this.value)">Update</button>`
@@ -72,12 +70,15 @@ function openForm(type) {
 }
 
 function saveProduct() {
+  // memastikan nilai categoryId diambil sebelum di masukan ke dalam 
+  // data Json
+  let categoryId = $("#categoryId").val();
   let jsonData = {
-    categoryName : document.getElementById("categoryName").value,
-    name: document.getElementById("productName").value,
-    slug: document.getElementById("productSlug").value,
-    description: document.getElementById("productDesc").value,
-    isDeleted: document.getElementById("productDeleted").checked
+    name: $("#productName").val(),
+    slug: $("#productSlug").val(),
+    description: $("#productDesc").val(),
+    isDeleted: $("#productDeleted").prop("checked"),
+    categoryId: categoryId
   }
   $.ajax({
     type: "POST",
@@ -104,16 +105,10 @@ function editForm(id){
       success: function (response) {
         let productData = response.data[0];
 
-        // document.getElementById('productName').value = productData.name;
-        // document.getElementById('productSlug').value = productData.slug;
-        // document.getElementById('productDesc').value = productData.description;
-        // document.getElementById('productDeleted').checked = productData.isDeleted;
-        // document.getElementById('editButton').value = productData.id;
-
         $('#productName').val(productData.name);
         $('#productSlug').val(productData.slug);
         $('#productDesc').val(productData.description);
-        $('#categoryName').val(productData.categoryName);
+        $('#categoryId').val(productData.category.id);
         $('#productDeleted').prop("checked", productData.isDeleted);
         $('#editButton').val(productData.id);
       }
@@ -122,15 +117,11 @@ function editForm(id){
 
 function editProduct(id){
   let jsonData = {
-    // name: document.getElementById("productName").value,
-    // slug: document.getElementById("productSlug").value,
-    // description: document.getElementById("productDesc").value,
-    // isDeleted: document.getElementById("productDeleted").checked
     id : $('#productId').val(),
     name: $('#productName').val(),
     slug: $("#productSlug").val(),
     description: $('#productDesc').val(),
-    categoryName : $('#categoryName').val(),
+    categoryId : $('#categoryId').val(),
     isDeleted: $('#productDeleted').prop("checked")
   }
   $.ajax({
@@ -153,16 +144,9 @@ function deleteForm(id){
       contentType: "application/json",
       success: function (response) {
         let productData = response.data[0];
-        // document.getElementById("productName").value = productData.name;
-        // document.getElementById("productName").disable = true;
-        // document.getElementById("productSlug").value = productData.slug;
-        // document.getElementById("productSlug").disable = true;
-        // document.getElementById("productDesc").value = productData.description;
-        // document.getElementById("productDesc").disable = true;
-        // document.getElementById("productDeleted").value = productData.isDeleted;
-        // document.getElementById("productDeleted").disable = true;
-        // document.getElementById("deleteButton").value = productData.id;
 
+        $('#categoryId').val(productData.category.id);
+        $('#categoryId').prop("disabled", true);
         $('#productName').val(productData.name);
         $('#productName').prop("disabled", true);
         $('#productSlug').val(productData.slug);
