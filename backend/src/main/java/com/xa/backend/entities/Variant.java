@@ -72,7 +72,7 @@ public class Variant extends BaseEntity {
 
   @ManyToOne
   @JoinColumn(name = "product_id", insertable = false, updatable = false)
-  @JsonBackReference
+  @JsonManagedReference
   private Product product;
 
   @Column(name = "product_id")
@@ -82,7 +82,7 @@ public class Variant extends BaseEntity {
   @Column(name = "is_deleted")
   private Boolean isDeleted;
 
-  @OneToMany(mappedBy = "variantId", cascade = CascadeType.ALL)
-  @JsonManagedReference
-  private List<OrderDetail> orderDetails;
+  // @OneToMany(mappedBy = "variantId", cascade = CascadeType.ALL)
+  // @JsonBackReference
+  // private List<OrderDetail> orderDetails;
 }
