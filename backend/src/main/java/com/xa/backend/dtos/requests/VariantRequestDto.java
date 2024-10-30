@@ -5,7 +5,6 @@ import lombok.Data;
 @Data
 public class VariantRequestDto {
   private Long id;
-  private Long categoryId;
   private Long productId;
   private String name;
   private String slug;

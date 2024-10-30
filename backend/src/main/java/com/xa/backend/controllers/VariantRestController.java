@@ -16,7 +16,10 @@ import com.xa.backend.entities.Product;
 import com.xa.backend.entities.Variant;
 import com.xa.backend.repositories.VariantRepository;
 import com.xa.backend.services.VariantService;
+import com.xa.backend.services.ProductService;
+import com.xa.backend.services.CategoryService;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,11 +32,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @SuppressWarnings("unused")
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/variant")
 public class VariantRestController {
 
   @Autowired
   private VariantService variantService;
+
+  @Autowired
+  private ProductService productService;
+
+  @Autowired
+  private CategoryService categoryService;
+  
 
   @GetMapping("")
   public ResponseEntity<?> getAllVariant() {
@@ -43,14 +54,14 @@ public class VariantRestController {
         List<VariantResponseDto> variantResponseDtos = new ArrayList<>();
         for(Variant variant : variants) {
           VariantResponseDto variantResponseDto = new VariantResponseDto();
-          variantResponseDto.setCategoryId(variant.getProduct().getCategory().getId());
-          variantResponseDto.setProductId(variant.getProductId());
+          variantResponseDto.setId(variant.getId());
           variantResponseDto.setName(variant.getName());
           variantResponseDto.setSlug(variant.getSlug());
           variantResponseDto.setDescription(variant.getDescription());
           variantResponseDto.setPrice(variant.getPrice());
           variantResponseDto.setStock(variant.getStock());
           variantResponseDto.setIsDeleted(variant.getIsDeleted());
+          variantResponseDto.setProduct(variant.getProduct());
           variantResponseDtos.add(variantResponseDto);
         }
         resultMap.put("status", 200);
@@ -66,12 +77,41 @@ public class VariantRestController {
       }
   }
 
+  @GetMapping("/{id}")
+  public ResponseEntity<?> getVariantById(@PathVariable Long id) {
+      LinkedHashMap<String, Object> resultMap = new LinkedHashMap<>();
+      try {
+        Variant variants = variantService.getVariantById(id);
+        List<VariantResponseDto> variantResponseDtos = new ArrayList<>();
+        VariantResponseDto variantResponseDto = new VariantResponseDto();
+        variantResponseDto.setId(variants.getId());
+        variantResponseDto.setProduct(variants.getProduct());
+        variantResponseDto.setName(variants.getName());
+        variantResponseDto.setSlug(variants.getSlug());
+        variantResponseDto.setDescription(variants.getDescription());
+        variantResponseDto.setPrice(variants.getPrice());
+        variantResponseDto.setStock(variants.getStock());
+        variantResponseDto.setIsDeleted(variants.getIsDeleted());
+        variantResponseDtos.add(variantResponseDto);
+        
+        resultMap.put("status", 200);
+        resultMap.put("message", "success");
+        resultMap.put("data", variantResponseDtos);
+        return new ResponseEntity<>(resultMap, HttpStatus.OK);
+
+      } catch (Exception e) {
+        resultMap.put("status", 500);
+        resultMap.put("message", "failed");
+        resultMap.put("error", e);
+        return new ResponseEntity<>(resultMap, HttpStatus.INTERNAL_SERVER_ERROR);
+      }
+  }
+  
+
   @PostMapping("")
   public ResponseEntity<?> saveVariant(@RequestBody VariantRequestDto variantRequestDto) {
     LinkedHashMap<String, Object> resultMap = new LinkedHashMap<>();
     try {
-      Product product = new Product();
-      product.setCategoryId(variantRequestDto.getCategoryId());
       Variant variant = new Variant();
       variant.setProductId(variantRequestDto.getProductId());
       variant.setName(variantRequestDto.getName());
@@ -99,7 +139,6 @@ public class VariantRestController {
     try {
       Product product = new Product();
       Variant variant = variantService.getVariantById(id);
-      product.setCategoryId(variantRequestDto.getCategoryId());
       variant.setProductId(variantRequestDto.getProductId());
       variant.setName(variantRequestDto.getName());
       variant.setSlug(variantRequestDto.getSlug());

@@ -35,4 +35,9 @@ public class VariantServiceImpl implements VariantService {
     variantRepository.delete(variant);
   }
 
+  @Override
+  public List<Variant> getVariantsByProductId(Long productId) {
+    return variantRepository.getVariantsByProductId(productId);
+  }
+
 }
